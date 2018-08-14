@@ -1,4 +1,4 @@
-from pycube256 import CubeHash
+from pycube256 import CubeSum
 
 class RegMaker:
 
@@ -18,7 +18,7 @@ class RegMaker:
     def gen(self, mac, mode=1):
         m = "".join(mac.split(':'))
         if mode == 1:
-            k = CubeHash(mode=self.hash_length).hash(m)
+            k = CubeSum(mode=self.hash_length).hash(m)
         else:
             k = m * 64
         f = []
